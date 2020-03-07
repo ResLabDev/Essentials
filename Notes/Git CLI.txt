@@ -1,0 +1,82 @@
+$ git --version
+$ git config --global user.name "ResLabDev"
+$ git config --global user.email "ba_zsolt@yahoo.com"
+$ git config --list
+$ git help config
+$ git config --help
+
+Scenarios
+1. Existing project on the local machine
+2. Existing project on the remote machine
+
+=== 1. Existing project on the local machine ===
+$ git init
+$ rm -rf .git
+
+=> Before commit
+$ git status
+$ touch .gitignore        % Creates ignore file
+
+Process:
+---------------------       ----------------        --------------
+| Working Directory |       | Staging Area |        | Repository |
+---------------------       ----------------        --------------
+          | <<============ Checkout the project ========== |
+          | ===== Stage Fixes ===>> |
+                                    | ===== Commit =====>> |
+
+=> Staging: organize what we want to commit to the repository
+$ git add -A
+$ git add <file.ext>
+$ git reset
+$ git reset <file.ext>
+
+=> Commit: use message each Time
+$ git commit -m "<message>"
+$ git log
+
+=== 2. Clone Remote Repository ===
+$ git clone <url> <where to clone>
+$ git clone ../remote_repo.git .
+$ git remote -v                     % Info
+$ git branch -a                     % List all the branches
+$ git diff
+$ git status
+$ git add -A
+$ git commit -m "<message>"
+$ git pull origin master
+$ git push origin master
+
+=== 3. Create Remote Repository ===
+echo "# STM32MCU" >> README.md
+git init
+git commit -m "first commit"
+git remote add origin https://github.com/ResLabDev/STM32MCU.git
+git push -u origin master
+
+=== Common Workflow by Example ===
+$ git branch spi-add                % Create new branch
+$ git branch                        % Get info about the branches
+$ git checkout spi-add              % Switch to branch
+$ git status                        % Getting the current status
+$ git diff                          % Comparing differences
+$ git add -A                        % Adding the changes
+$ git commit -m "SPI Tx finalized"  % Committing the changes locally
+$ git push -u origin spi-Adds       % Adding to the origin (remotely)
+$ git branch -a                     %
+$ git pull
+$ git push
+
+=== Merging with Master ===
+$ git checkout master              % Switching to master branch
+$ git pull origin master           % Cloning master locally
+$ git branch --merged              % Check merged status
+$ git merge spi-add                % Merge branch to the master
+$ git push origin master           % Pushing changes
+
+=== Deleting a Branch ===
+$ git branch --merged              % Check merged status
+$ git branch -d spi-add            % Deleting locally
+$ git branch -a                    % Chec status
+$ git push origin --delete spi-add % Deleting it in the origin
+$ git branch -a                    % Check status, it should be deleted

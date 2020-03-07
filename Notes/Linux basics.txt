@@ -1,0 +1,135 @@
+*** Shortcuts ***
+  TAB					% Autocomplete
+  CTRL + C				% Exit on running command
+  CTRL + Z				% Send a running command in the backgound
+  CTRL + SHIFT + V 		% Paste from clipboard
+  SHIFT + INSERT 		% Paste from clipboard
+  CTRL + D 				% Log put of the current terminal
+  CTRL + L 				% Clearing terminal screen
+  CTRL + A 				% Moves the cursor to the beginning of the line
+  CTRL + E 				% Moves the cursor to the end of the line
+  CTRL + U 				% Erases everything from the current cursor position to the beginning of the line
+  CTRL + K 				% Erases everything from the current cursor position to the end of the line
+  CTRL + W 				% Erases the word preceding to the cursor position
+  CTRL + Y 				% Pastes the erased text = similar to PgUp in a lot of terminal
+  CTRL + N 				% Displays the next command = similar to PgDown in a lot of terminal
+  CTRL + R 				% Search in history
+
+*** Terminal ***
+  $ clear				% Clearing terminal screen
+  $ pwd 				% Print working directory
+  $ cd <directory>		% Navigating into the directory
+  $ cd ~				% Go to home directory
+  $ cd /				% Go to root directory
+  $ cd ..				% Step out from directory
+  $ sudo				% Root/superuser
+  $ sudo su             % Grants Root/superuser for all operations
+  $ man <cmd>           % Help on command
+  $ q ==> man           % Quit from help on command
+  $ history 			% History
+  $ ls					% Listing Files
+  $ ls -R				% List all files and subdirectories
+  $ ls -a 				% View hidden files
+  $ ls -al			    % List folders and files with detailed information
+  $ ll 			        % List folders and files with detailed information
+	Types & permission	  Owner		  User Group  Size (Bytes)  Date/Time	 Directory/File Name
+	-rwxr-xr-x   		1 bagolyzsolt ifxuser     145   		Feb 19 15:28 serverInit*
+
+ *** File/Folder Operations ***
+  $ cat > <file.ext><type content>	CTRL + D 	% Creating text file
+  $ cat <file1> <file2> > <mergedFile>			% Merging / combining text files
+  $ rm <file>									% Delete file
+  $ rm -rf <directory>/                         % Deleting the whole directory
+  $ mv <file> <newPath>							% Moving files (needs superuser permission)
+  $ mv <file> <newFileName>						% Renaming files (needs superuser permission)
+  $ mkdir </path/directoryName>					% Creating new directory
+  $ mkdir <dir1> <dir1> <dirN>					% Creating multiple directories
+  $ rmdir <dir1>								% Removing directory
+  $ mv <dir>									% Renaming directory
+
+*** Autorization Levels ***
+  I. Ownership
+    1. User (Owner)
+	2. User group - same access permission
+	3. Other
+  II. Permission
+    1. Read 	: r
+	2. Write 	: w
+	3. Execute 	: x
+	4. No		: -
+								Selected	 User	User Group	Other
+	File: 		-rw-rw-r--	==> -			 rw-	rw-			r--
+	Directory:  drwxr-xr-x	==> d			 rwx	r-x			r-x
+
+	$ chmod				% Change permission mode
+	== Absolute Mode Permission chmod ==
+	e.g.:
+	$ chmod 764 <file>
+	Number	Symbol	Permission Type
+	0		---		No
+	1		--x		Execute
+	2		-w-		Write
+	3		-wx		Write + Execute
+	4		r--		Read
+	5		r-x		Read + Execute
+	6		rw-		Read + Write
+	7		rwx		Read + Write + Execute
+
+	== Symbolic Mode Permission chmod ==
+	e.g.:
+	$ chmod g=rwx <file>
+	$ chmod g+x <file>
+	$ chmod g-w <file>
+	Operator	Description
+	+			Adds permission
+	-			Removes permission
+	=			Sets and overrides the previous permission
+	User Denotations
+	u	user/owner
+	g	group
+	o	other
+	a	all
+
+	== Changing Ownership and Group ==
+	Superuser is needed
+	$ chown <user> <filename>			% Changing ownership
+	$ chown <user:group> <filename>		% Changing user and group
+	$ chgrp	<group> <filename>			% Changing the group
+	/etc/group							% All the system groups and permissions
+	$ groups							% Lists all the groups
+    $ newgrp <groupName>	 			% Creating new group
+
+
+*** VI Editor ***
+    1. Command modes
+    2. Insert mode: inserting text in the file. Switching from/to command mode to/from insert mode: "i"  / ESC
+    $ vi <newFileName>
+    $ vi <existingFileName>
+
+     === Commands ==
+     i              Switch to insert mode
+     ESC            Terminate insert mode
+     a              Write after cursor
+     A              Write at the end of the line
+     u              Undo last change
+     U              Undo all changes
+     o              Open a new line, switches to insert mode
+     dd             Delete a single line
+     3dd            Delete 3 lines
+     D              Delete contents of line after the cursor
+
+     === Saving and Closing ==
+     SHIFT + zz     Save and quit
+     :wq            Save the file and quit
+     :w             Save the file but keep it Open
+     :q             Quit without saving
+
+
+*** Scripting ***
+    #!/bin/sh		# Interpreter location (shebang)
+    pwd
+    echo "Name:  "
+    read name
+    echo "What is your level, $name: "
+    read level
+    echo "Welcome agent $name($level)"

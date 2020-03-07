@@ -1,0 +1,40 @@
+=== Compilation Process ===
+
+  .c               - handle #includes
+-E | preprocessor: - handle #defines
+   |               - strip out comments
+   |
+-S | compiler:     - translate C to assembler file
+   .s
+-c | assembler:    - translate assembly to object file
+   |
+   .o
+   | linker:       - collects object file to produce executable
+   |
+   .exe
+
+$ gcc <file.c> -o file
+$ gcc <file.c> -o file -lm
+
+--- Example ---
+main.c contains a function which is located in calc.c. Compile to each object file then link together to .exe.
+main.c c must contain the prototype of the function in calc.c
+
+$ gcc -c calc.c
+$ gcc -c main.c
+$ gcc calc.o main.o -o api -lm
+
+=== Creating Makefile ===
+
+# == MakeFile ==
+# target: dependecies
+#   action
+
+api: main.o calc.o
+    gcc main.o calc.o -o api
+
+main.o: main.c
+    gcc -c main.c
+
+calc.o: calc.c
+    gcc -c calc.c
