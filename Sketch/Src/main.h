@@ -7,7 +7,6 @@
 
 #define DIM_OF(x)					(sizeof(x) / sizeof(*x))
 
-
 // @file: spi_test.c
 void SPI_Send (void);
 
