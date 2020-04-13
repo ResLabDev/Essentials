@@ -10,11 +10,11 @@
 //
 #include <stdio.h>
 
-#include "../Src/callback.h"
-#include "../Src/linked_list.h"
-#include "../Src/queue.h"
-#include "../Src/recursion.h"
-#include "../Src/tricks.h"
+#include "callback.h"
+#include "linked_list.h"
+#include "queue.h"
+#include "recursion.h"
+#include "tricks.h"
 
 #define QUEUE_EN			1
 #define CALLBACK_EN         1
