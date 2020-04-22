@@ -66,6 +66,7 @@ $ git push -u origin spi-Adds       % Adding to the origin (remotely)
 $ git branch -a                     %
 $ git pull origin master
 $ git push origin master
+$ git diff master origin/master
 
 === Merging with Master ===
 $ git checkout master              % Switching to master branch
