@@ -41,3 +41,13 @@ print(AnimalCrackers('Crazy Kangaroo'))
 print(MakesTwenty(20,10))
 print(MakesTwenty(12,8))
 print(MakesTwenty(2,3))
+
+
+# Implement a function that returns the minimal and the maximal value of a list (in this order).
+def get_min_max(seq): 
+    return (min(seq), max(seq))
+
+GetMinMax = lambda seq: (min(seq), max(seq))
+
+print(get_min_max([5,8,9,11,1,2,65,49,12,-1,-8,3]))
+print(GetMinMax([5,8,9,11,1,2,65,49,12,-1,-8,3]))

@@ -64,8 +64,8 @@ $ git add -A                        % Adding the changes
 $ git commit -m "SPI Tx finalized"  % Committing the changes locally
 $ git push -u origin spi-Adds       % Adding to the origin (remotely)
 $ git branch -a                     %
-$ git pull
-$ git push
+$ git pull origin master
+$ git push origin master
 
 === Merging with Master ===
 $ git checkout master              % Switching to master branch
