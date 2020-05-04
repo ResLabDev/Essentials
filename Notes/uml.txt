@@ -1,0 +1,138 @@
+https://www.guru99.com/uml-notation-symbol.html
+https://www.tutorialspoint.com/uml/uml_basic_notations.htm
+
+
+UML - Unified Modeling Language (version 2.5)
+Object Management Group: www.omg.org
+UML, as a standard, provides:
+  - Concepts
+  - Agreed semantics
+  - Notation
+  - Organisation
+  - Extension mechanism
+  
+Certification: OMG Certified UML Professional 2TM (OCUP 2TM) in Foundtation / Intermediate / Advanced levels
+MDA - Model Drivven Architecture
+Structural
+  - Object
+  - Class
+  - Component
+  - Deployment
+  - Package
+  - Composite structure
+  
+Behavioural
+  - Use case
+  - Sequence
+  - Communication
+  - Interaction overwiew
+  - Timing
+  - State machine
+  - Activity
+  
+Common Elements in UML
+  - Frames
+  - Classifiers
+  - Features and properties
+  - Comments / Notes and constraints
+  - Dependencies
+  - Stereotypes
+  
+ === Structural Diagrams ===
+ 1. CLASS Diagrams
+     - Purpose:
+	   > Model the terms that are used in the business
+	   > Model the collaborations between classes to implement use cases
+	   > Model the structure of classes and interfaces in the system
+	   > Reason about the system and how it work
+	   > Provide the basis for implementation in an OOP language
+   => EA attribute/operation visibility: + public, - private, # protected, ~ package
+   => Encapsulation (i.e. information hiding) in OOP
+     - private: only the current class will have access to the field or method
+	 - protected: only the current class and subclasses (and sometimes also same-package classes)
+     - public: any class can refer to the field or call the method
+   => EA derived attribute: /<attribute>
+   ToDo: check association + roles in the detail
+   - Composition: strong whole-part relationship (filled diamond)
+   - Aggregation: weak whole-part relationship (unfilled diamond)
+   - Generalization: superclass is a generalization of the subclasses (unfilled triangle pointing to the superclass)
+   - Specialization: each subclasses are the specialization of the superclass (unfilled triangle pointing to the superclass)
+ 
+ 2. OBJECT (INSTANCE) Diagrams
+   - E.g. issue analysis: model the things in the problem domain before classifying them as classes
+   - Runtime instances
+   - The name of the objects are underlined to be easy to distinguish from class
+   - ":" specifies the instance belongs to which class e.g. "schedule: Schedule"
+   - Object State + attribute values
+  
+ 3. Advanced CLASS Diagram Notation
+   - Domain modelling (High Level/Less Detail) => Analysis and design (Medium Level/Medium Detail) => Programming (Low Level/More Detail)
+   - Association Class
+   - Interfaces and enumerations
+   - Constraints: ordered or unique
+   - Ownership
+   - Association class
+   - Interaces: they form a contract => define a set of operations that an implementing class must provide methods for. They addres the lack of multiple inheritance
+   - Abstract class: it may have attributes and define default methods for operations but can never be instantiated
+   - Composite structure diagram: usually in component diagram showing the subdiagrams
+ 
+ === Behavioural Diagrams ===
+ 4. USE CASE Diagram
+   - Purpose:
+	   > Provide a high level view of the system
+	   > Document user requirements
+	   > Explore alternative scenarios
+	   > Provide a starting point for analysis of classes
+	   > Help to define user interface
+	   > Support project management in estimation
+	   > Form a basis of testing
+	   > Summarize the functionality and provide a way of determining the scope
+	   > Provide a tool for communicating with users about the goals of the system
+	   > Organize the requirements from the users' point of view
+	   > A recipe -> not just a list of ingredients
+   - Robustness Analysis => the starting point for working out what classes are required in the system to implement the functionality
+   - It describes how the users will use the system
+   - Basis for testing: test cases can be written for each use case and each alternative or error path through that use case
+   - Basic notations: Subjects, Use Cases, Actors, Associations
+   - Represents some behaviour of the subject
+   - Relationships: Generalization/Specialization, Include, Extend
+   - Specifying use cases:
+	   > Use cases with no actors: it should distinguish actors from triggers
+	   > Specifying behaviour
+	   > Activity diagrams
+	   > Use case descriptions
+   - Activity diagram: a use case can be specified graphically using one or more activity diagrams or sequence diagrams
+   - Activity diagram shows the steps in the use case and alternative scenarios as branches
+   
+  === Behavioural Diagrams ===
+  5. SEQUENCE Diagram
+   - Purpose:
+	   > 
+   
+   
+   === Using UML Diagrams - General Advice ===
+   1. Model with a purpose
+   2. Don't use models for the sake of it
+   3. Think of who the stakeholders are
+   4. Model patterns
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+  
+  
