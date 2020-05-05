@@ -93,7 +93,11 @@ Common Elements in UML
    - Robustness Analysis => the starting point for working out what classes are required in the system to implement the functionality
    - It describes how the users will use the system
    - Basis for testing: test cases can be written for each use case and each alternative or error path through that use case
-   - Basic notations: Subjects, Use Cases, Actors, Associations
+   - Basic notations:
+	   > Subjects:
+	   > Use Cases:
+	   > Actors:
+	   > Associations:
    - Represents some behaviour of the subject
    - Relationships: Generalization/Specialization, Include, Extend
    - Specifying use cases:
@@ -104,11 +108,47 @@ Common Elements in UML
    - Activity diagram: a use case can be specified graphically using one or more activity diagrams or sequence diagrams
    - Activity diagram shows the steps in the use case and alternative scenarios as branches
    
-  === Behavioural Diagrams ===
   5. SEQUENCE Diagram
-   - Purpose:
-	   > 
-   
+   - Purpose: 
+	   > Provide a view of the interaction between elements of the system at a number of different levels
+	   > Support use cases by specifying the detailed interaction
+	   > Explore alternative scenarios in more detail
+	   > Analyse interaction in tests
+   - Model interaction at different levels:
+	   > Components or subsystem
+	   > Active objects
+	   > Within a use case
+	   > Within an operation
+   - Specify use case interaction: show the detailed interaction to support a use case => at the user interface OR among other objects
+   - Analyse interaction in tests: a debugger stack trace can be converted to a sequence diagram and compared with the design
+   - No time scale of the diagrams
+   - Basic notations:
+	   > Lifelines: Represents instances, usually of objects in an interaction. Also used for actors.
+	   > Messages: Lifelines send and receive messages or signals
+	   > Signals: Arguments of the messages correspond to the attributes of the signals
+	   > Execution Specializations: (activation in older UML) represents the execution of code by the object
+   - Message types: Creation, Synchronous, Reply, Asynchronous, Deletion
+   - Active objects: execute their behaviour as soon a they are created, run on own thread control
+   - Timing and duration constraints:
+       > Observation: time, duration
+	   > Constraints: time, duration
+   - Allow message to slant down
+   - Interaction occurences => Reusable sequence diagrams: similar to moduls
+       > Frame with "ref"
+	   > Gates: where messages go into or come out of an interaction occurence
+   - Combined Fragments: Including structures in interactions: contain structures as programs do
+	   > Par: parallel execution
+	   > Loop: program loop
+	   > Alt: two or more ALternatives => if..then...else / case
+	   > Opt: just one alternative
+	   > Break: break out of enclosing segment
+	   > Assert: shows the only valid sequence
+	   > Critical: region that takes precedence over other par
+	   > Seq: weak sequencing of the operand applies
+	   > Strict: strict sequencing applies
+	   > Neg: message traces not allowed occur
+	   > Ignore: show messages not to be handled
+	   > Consider: show messages that must be handled
    
    === Using UML Diagrams - General Advice ===
    1. Model with a purpose
