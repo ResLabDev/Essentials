@@ -46,8 +46,9 @@
   $ rm -rf <directory>/                         % Deleting the whole directory
   $ mv <file> <newPath>							% Moving files (needs superuser permission)
   $ mv <file> <newFileName>						% Renaming files (needs superuser permission)
+  $ mv <source> <target>						% Renaming filea/directories
   $ mkdir </path/directoryName>					% Creating new directory
-  $ mkdir <dir1> <dir1> <dirN>					% Creating multiple directories
+  $ mkdir <dir1> <dir2> <dirN>					% Creating multiple directories
   $ rmdir <dir1>								% Removing directory
   $ mv <dir>									% Renaming directory
 
