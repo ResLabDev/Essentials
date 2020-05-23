@@ -16,6 +16,9 @@
   CTRL + R 				% Search in history
 
 *** Terminal ***
+  $ whoami              % Current user
+  $ hostname            % The name of the host
+  # echo                % Displays a string
   $ clear				% Clearing terminal screen
   $ pwd 				% Print working directory
   $ cd <directory>		% Navigating into the directory
@@ -24,6 +27,7 @@
   $ cd ..				% Step out from directory
   $ sudo				% Root/superuser
   $ sudo su             % Grants Root/superuser for all operations
+  $ su <UserName>       % Switches to the defined user
   $ man <cmd>           % Help on command
   $ q ==> man           % Quit from help on command
   $ history 			% History
@@ -133,3 +137,12 @@
     echo "What is your level, $name: "
     read level
     echo "Welcome agent $name($level)"
+
+=== CentOS 7 ===
+
+
+
+*** Acessing to Linux ***
+  Putty, SecureCRT, SSH
+  Install "
+

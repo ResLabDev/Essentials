@@ -1,0 +1,118 @@
+=== Linux System Access and File System ===
+
+VirtualBox full screen: left CTRL+F 
+Host name: linuxvm
+root: ToorDev
+devlab: embdev
+
+Linux remote access: Putty, SecureCRT, SSH from Linux to Linux (SSH: Secure Shell)
+Network: Host-only Adapter - allows communication between PC and VM
+*** IP ***
+  $ ifconfig
+  $ ip a
+  $ ip addr
+  $ ifup <adapter name>   % Connect via adapter
+  
+*** File System ***
+  File system types: ext3, ext4, XFS, NTFS, FAT, etc.
+  root                  = /
+  boot loader           = /boot             % grub.cfg
+  root user home        = /root
+  attached devices      = /dev
+  config files          = /etc
+  everyday usr commands = /bin->/usr/bin    % linked
+  system commands       = /sbin->/usr/sbin
+  optional add-on APPs  = /opt              % not part of the OS
+  running processes     = /proc             % exist only in memory
+  C library             = /lib->usr/lib     % needed by commands and APPs
+  temporary files       = /tmp
+  user directory        = /home
+  commands              = /usr/bin
+  system logs           = /var
+  system deamons        = /run              % start very early (e.g. systemd and udev) to store temporary runtime files like PID files
+  mount ext filesys     = /mnt              % e.g. NTFS
+  for CDROM mounts      = /media
+                   
+*** Navigation Commands ***  
+  $ cd <DirectoryName> % change directory
+  $ cd % changes to home directory
+  $ pwd % print working directory
+  $ ls % list files/directories
+  /         = absolute path
+  WITHOUT / = relative path
+  
+*** Directory Listing Attributes ***
+  $ ls -l % <Type> <# of Links> <Owner> <Group> <Size> <--DATE--> <Name>
+  $ ls -ltr
+  
+*** Creating Files and Directories ***
+  $ touch % create new file
+  $ cp % copy file
+  $ vi % VI editor => See the details in Linux Basics
+  $ mkdir % create directory
+  
+*** Linux File Types ***
+=> 7 different file types
+  - % Regular file
+  d % Directory
+  l % Link
+  c % Special file or device file
+  s % Socket
+  p % Named pipe
+  b % Block device
+  
+*** Find Files and Directories ***
+  $ find . -name "<FileName>"
+  $ yum install mlocate
+  $ updatedb
+  $ locate <FileName>
+  $ find / -name "ifcfg-enp0s3"
+  locate: uses prebuilt database which should be regularly updated (i.d. $ updatedb)
+  find: iterates over a filesystem to locate files
+  locate vs find: locate is much faster, but can be inaccurete if the database in the cache is not updated
+   
+*** Find Files and Directories ***
+  $ passwd <UserID>           % Change password
+  $ passwd -f <UserID>        % Change forced password
+
+*** WildCards ***
+  WildCard: id a character that can be used as a subtitute for any of a class of characters in a search
+  *  - zero or more characters
+  ?  - single character
+  [] - range of characters
+  \  - escape character
+  ^  - the beginning of the line
+  $  - the end of the line
+  $ touch abc{1..9}-xyz.txt     % creates 9 files
+  $ rm abcd*
+  $ ls -l ?bcd*
+  $ ls -l *[cd]*
+  $ ls -l *[789]*
+  $ ls -ltr *[789]*
+  $ ls -l *[cd]* | more
+  
+*** Soft and Hard Links ***
+  inode         = Pointer or number of a file on the hard disk
+  SoftLink      = Link will be removed if file  is removed or renamed
+  HardLink      = Deletin/renaming or moving the original fill won't be affect the hard link
+  $ ln          % Create HardLink - Works only within the same partition
+  $ ln -s       % create SoftLink
+  Example:
+    <HardLink> -> <inode> <- <file> <- <SoftLink>
+  $ mkdir Work && cd Work
+  $ touch hulk
+  $ ls -li  % inode of file
+  
+  
+  
+  
+  
+  
+  
+  
+   
+  
+
+  
+ 
+ 
