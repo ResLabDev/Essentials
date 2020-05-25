@@ -27,10 +27,13 @@
   $ cd ..				% Step out from directory
   $ sudo				% Root/superuser
   $ sudo su             % Grants Root/superuser for all operations
+  $ su -                % Grants Root/superuser for all operations
+  & exit                % Logs out from root
   $ su <UserName>       % Switches to the defined user
   $ man <cmd>           % Help on command
   $ q ==> man           % Quit from help on command
   $ history 			% History
+  $ date                % Current date
   $ ls					% Listing Files
   $ ls -R				% List all files and subdirectories
   $ ls -a 				% View hidden files
@@ -127,7 +130,7 @@
      SHIFT + zz     Save and quit
      :wq            Save the file and quit
      :w             Save the file but keep it Open
-     :q             Quit without saving
+     :q!            Quit without saving
 
 
 *** Scripting ***

@@ -1,1 +1,100 @@
 === Linux Fundamentals ===
+
+*** Command Syntax ***
+  command option(s) argument(s)
+
+*** File Permissions ***
+  Permissions: read (r), write (w), execute (x), no permission (-)
+  Permission Levels: user (u), group (g), other (o)
+  $ ls -l   % Display file or directory permission
+  Change permission command: chmod
+  $ chmod u-w <name>    % Removes write access from user
+  $ chmod g-w <name>    % Removes write access from group
+  $ chmod o-w <name>    % Removes write access from other
+  $ chmod a-r <name>    % Removes read access from user/group/other
+  
+  Chmod Numeric
+  # Sym rwx 
+  0 --- 000
+  1 --x 001 
+  2 -w- 010
+  3 -wx 011
+  4 r-- 100
+  5 r-x 101
+  6 rw- 110
+  7 rwx 111
+  
+*** File Ownership ***
+  2 owners: user and group
+  Change ownership:
+    $ chown <file>       % Changes the ownership of a file
+    $ chgrp <file>       % Changes the group ownership of a file
+    
+  Recursive onwership change option (Cascade)
+    -R
+    
+*** Access Control List (ACL)
+  Provides and additional, more flexable permission mechanism for file systems.
+  setfacl -m u:user:rwx <file>    % Add permission for a user
+  setfacl -m g:group:rw <file>    % Add permission for a group
+  setfacl -dm <entry> <dir>       % Allow all files or directories to inherit ACL entries from the directory it is within
+  setfacl -Rm <entry> <dir>       % The same as prevoius, but recursively
+  setfacl -x u:user <file>        % Remove specific entry
+  setfacl -b <file>               % Remove all entries
+  $ getfacl <file>
+  
+*** Help Commands ***
+  $ whatis <cmd>
+  $ <cmd> --help
+  $ man <cmd>
+  
+*** Ading Text to Files (Redirects)
+  vi
+  > or >> Redirect command output: > overrides all the contents, >> add new line
+  $ echo <string> > OR >> <file>  % Redirects string to a file
+  $ cat <file>  % Reads file content
+  $ ls -ltr > listfolder
+
+*** Standard Output to a File (tee) ***
+  tee: store and view (both at the same time) the output of any command
+  T-splitter: it breaks the output of a program so that it can be both displayed and saved in a file.
+  
+  [cmd] -> [tee] -> [stdout]
+             |
+           [file]
+  
+  $ echo <string> | tee <file>      % Override file
+  $ echo <string> | tee -a <file>   % Append file
+  $ wc -c <file>    % Counts characters in a file
+  $ ls -l | tee <file1> <file2> % Prints directory into multiple files
+
+*** Command Pipes ***
+ cmd1 [args] | cmd2 [args]
+ $ ls -ltr | more   % More splits content to fit the window
+ $ ll | tail -1     % Displays the last line of the output, ll => ls -l
+
+*** File Maintenance Commands ***
+  cp, rm, mv, mkdir, rmdidr or rm -r, chgrp, chown, chmod
+ 
+*** File Display Commands ***
+  cat, more, less, head, tail
+  $ cp /var/log/messages .
+  $ more messages
+  $ less messages
+  $ head -2 messages
+  $ tail -1 messages
+
+*** Filter / Text Processor Commands ***
+  cut, awk, grep, egrep, sort, uniq, wc
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+  
