@@ -150,6 +150,43 @@ Common Elements in UML
 	   > Ignore: show messages not to be handled
 	   > Consider: show messages that must be handled
    
+   
+   6. COMMUNICATION Diagram
+   
+   
+   7. ACTIVITY Diagram
+   
+   
+   8. STATE MACHINE Diagram
+   
+   
+   9. STATE MACHINE Diagram
+   
+   
+   10. COMPONENT Diagram
+     - Purpose:
+	     > Design planned software components and interfaces between them
+		 > Demonstrate how proven components can be integrated into the design
+		 > Show how the services components provide through their interfaces are delegated to classes or to sub-components
+	 - Components and interfaces:
+	     > SW components are responsible for cohesive areas of functionality in the system
+		 > They expose the functionality through interfaces
+		 > Allow components to be wired together through interfaces
+     - Show Component Integration:
+	     > Organisation may have existing components or use COTS (Commercial off-the-shelves) components
+		 > Component diagrams show the client components that use these components and the interfaces they must conform to
+	 - Show Delegation of Services
+	     > Components may be built up of sub-components
+		 > Services they provide are delegated to instances of sub-components, or at a lower level to objects
+	 - Basic Notation:
+	     > Components: modular, substitutable units of software that communicate through defined interfaces
+		 > Interaces:
+		     - Provided: how a component exposes its functionality to the outside world (similar to contract, API etc.)
+			 - Required: a component needs to use, that matches a provided interface
+		 > Dependencies: where the interface is not known, general dependencies between components can be shown. It is also possible to show dependencies between required and provided interfaces.
+	   
+   
+   
    === Using UML Diagrams - General Advice ===
    1. Model with a purpose
    2. Don't use models for the sake of it
