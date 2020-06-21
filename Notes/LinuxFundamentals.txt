@@ -85,7 +85,74 @@
   $ tail -1 messages
 
 *** Filter / Text Processor Commands ***
-  cut, awk, grep, egrep, sort, uniq, wc
+  cut: cut parts of lines from specified files or piped data and print the result to stdout
+    $ cut --version
+    $ cut -c1 <file>            % Lists the 1st characters from each line
+    $ cut -c1,2,3 <file>
+    $ cut -c1-5 <file>          % Range of characters
+    $ cut -c1-3,7-9 <file>      % List of ranges of  specified characters
+    $ cut -b1-3 <file>          % List by bytesize
+    $ cut -d: -f 6 <file>       % List first 6th separated by ':'
+    $ ll | cut -c2-4            % List the file access
+  awk: utility/language designed for data extraction. Most of the time it is used to extract fields from a file or from output
+    $ awk --version
+    $ awk '{print $1}' <file>                           % Lists the 1st column seperated by space
+    $ ll | awk '{print $1,$3}'
+    $ ll | awk '{print $NF}'                            % Prints the last column
+    $ awk '/<string/ {print}>' <file>                   % Searching for a specific word
+    $ awk -F: '{print $1}' <file>                       % Output only the 1st field
+    $ echo "Hello Tom" | awk '{$2="Adam"; print $0}'    % Replace words field words
+    $ cat <file> | awk '{$2="<string>"; print $0}'      % Replace words field words
+    $ awk 'length($0) > 15' <file>                      % Get lines that have more than 15 byte size
+    $ ll | awk '{if($9 == "<string>") print $0;}'       % Get the field matching with the <string>
+    $ ll | awk '{print NF}'                             % Total number of fields
+  grep/egrep: Global Regular Expression Print - processes text line by line and prints any lines which match a specified pattern (search feature)
+    $ grep --version
+    $ grep <keyword> <file>         % Search for a keyword
+    $ grep -c <keyword> <file>      % Search for a keyword and count match
+    $ grep -i <KEYword> <file>      % Search for a keyword ignore case sensitivity
+    $ grep -n <keyword> <file>      % Display the matched lines and their numbers
+    $ grep -v <keyword> <file>      % Display but keyword (exclude keyword)
+    $ grep <keyword> <file> | awk '{print $1}'         % Search for a keyword and then only give the 1st field
+    $ ll | grep <keyword>
+    $ egrep -i "<keyword1>|<keyword2>" <file>           % Search for multiple keywords
+  sort/uniq: sort - sorts in alphabetical order / uniq - remove the duplicates
+    $ sort --version
+    $ sort <file>
+    $ sort -r <file>        % Reverse order
+    $ sort -k2 <file>       % Sort by 2nd field
+    $ ll | sort
+    $ ll | sort -k9
+    $ uniq <file>
+    $ sort <file> | uniq
+    $ sort <file> | uniq -c     % Sort first then uniq and list count
+    $ sort <file> | uniq -d     % Only shows repeated lines
+  wc: Word Count - reads either stdio or a list of files and generates => newline count, word count and byte count
+    $ wc --version OR wc --help
+    $ wc <file>             % Lines Words Bytes
+    $ wc -l/w/ <file>       % Lines/Words/Bytes
+    $ wc <DIR>              % NAN
+    $ ll | wc -l            % Total number of files + 1
+    $ grep <keyword> | wc -l    % Number of keyword lines
+
+*** File Operation ***
+  Compararison:
+    diff: Line by line
+    cmp: Byte by byte
+  Compress / Uncompress:
+    tar: collects a bunch of files together at puts it into a container (similar to zip), no compression
+    gzip: compresses a file
+    gzip -d OR gunzip: uncompress a file
+  Truncate File Size:
+    truncate: shrinks or extends the size of a file to the specified size
+      $ truncate -s 10 <file>
+  Combining and Splitting Files
+    $ cat <file1> <file2> <file3> > <file4>         % 3 files combined into a single file
+    $ split <file4>
+    $ split -l 300 <fileSource> <fileDestination>   % Splits into 300 lines per file
+    
+  
+  
   
   
   

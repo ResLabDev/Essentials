@@ -1,0 +1,54 @@
+=== Linux System Administration ===
+
+*** File Editor ***
+  ed: Standard line editor
+  ex: Extended line editor
+  emacs: A full screen editor
+  pico: Beginner's editor
+  vim: Advanced version of vi editor
+  vi: Visual editor (available in almost every Linux Distro)
+    1. Command modes
+    2. Insert mode: inserting text in the file. Switching from/to command mode to/from insert mode: "i"  / ESC
+    $ vi <newFileName>
+    $ vi <existingFileName>
+
+     ~ Commands ~
+     i              Switch to insert mode
+     ESC            Terminate insert mode
+     r              Replace
+     dd             Delete
+     a              Write after cursor
+     A              Write at the end of the line
+     u              Undo last change
+     U              Undo all changes
+     o              Open a new line, switches to insert mode
+     dd             Delete a single line
+     3dd            Delete 3 lines
+     D              Delete contents of line after the cursor
+
+     ~ Saving and Closing ~
+     SHIFT + zz     Save and quit
+     :wq!           Save the file and quit
+     :w!            Save the file but keep it Open
+     :q!            Quit without saving
+     
+*** sed Command ***
+  sed:
+    - Replace a string in a file with a new string
+    - Find and delete a line
+    - Remove empty lines
+    - Remove the first or n lines in a file
+    - To replace tabs with spaces
+    - Show defined lines from a file
+    - Substitute within vi editor
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+ 
