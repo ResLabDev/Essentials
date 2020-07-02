@@ -37,6 +37,7 @@ $ git log
 
 === 2. Clone Remote Repository ===
 $ git clone <url> <where to clone>
+$ git remote update --prune
 $ git clone ../remote_repo.git .
 $ git remote -v                     % Info
 $ git branch -a                     % List all the branches
@@ -67,6 +68,14 @@ $ git branch -a                     %
 $ git pull origin master
 $ git push origin master
 $ git diff master origin/master
+% Reverting changes
+$ git log
+$ git log --oneline
+$ git diff <commit hash> <filename>
+$ git reset <commit hash> <filename>
+$ git reset --soft HEAD~1		   % Undo last commit
+$ git reset HEAD . 				   % Restore step 1.
+$ git checkout .				   % Restore step 2.
 
 === Merging with Master ===
 $ git checkout master              % Switching to master branch

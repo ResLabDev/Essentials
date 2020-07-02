@@ -41,6 +41,9 @@
   $ ll 			        % List folders and files with detailed information
 	Types & permission	  Owner		  User Group  Size (Bytes)  Date/Time	 Directory/File Name
 	-rwxr-xr-x   		1 bagolyzsolt ifxuser     145   		Feb 19 15:28 serverInit*
+  $ whereis <file>
+  $ which <file>
+  $ <file> --version
 
  *** File/Folder Operations ***
   $ cat > <file.ext><type content>	CTRL + D 	% Creating text file
