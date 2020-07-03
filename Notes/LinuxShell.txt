@@ -1,0 +1,26 @@
+=== Linux Shell Scripting ===
+
+*** Kernel and Shell ***
+  - Kernel: interface between HW and SW: HW - Kernel - Shell - Application - User
+  - Shell: similar to container, interface between user and Kernel/Os
+  - CLI is a Shell
+  $ echo $0				% Find the shell
+  $ cat /etc/shells		% Available shells
+  $ /etc/passwd			% Current Shell
+  
+*** Types of Shells ***
+  - Gnome (GUI)
+  - KDE (GUI)
+  - sh (CL)
+  - bash (CL)
+  - csh and tcsh (CL)
+  - ksh (CL): Kornshell
+  $ cat /etc/shells		% List all available shells
+  
+  *** Shell Scripting ***
+    - Shell Script: executable file containing multiple shell commands that are exectued sequentially
+	  * Shell: #!bin/bash
+	  * Comment: # this is a comment
+	  * Commands: echo, cp, grep, etc.
+	  * Statements. if, while, for etc.
+	  * Calling: ./script.bash OR absolute path
