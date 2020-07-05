@@ -1,5 +1,9 @@
 === Linux Fundamentals ===
 
+*** Changing Hostname ***
+  $ hostnamectl
+  $ hostnamectl set-hostname <newName>
+
 *** Command Syntax ***
   command option(s) argument(s)
 

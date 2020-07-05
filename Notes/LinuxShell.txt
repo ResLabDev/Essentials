@@ -20,7 +20,40 @@
   *** Shell Scripting ***
     - Shell Script: executable file containing multiple shell commands that are exectued sequentially
 	  * Shell: #!bin/bash
-	  * Comment: # this is a comment
+	  * CommentS: # this is a comment
 	  * Commands: echo, cp, grep, etc.
 	  * Statements. if, while, for etc.
 	  * Calling: ./script.bash OR absolute path
+
+  *** Print csh script absolute path ***
+	#!/bin/csh
+	set rootdir = `dirname $0`
+	set per = "/"
+	set script = "call_mdb.sh"
+	set abs_rootdir = `cd $rootdir && pwd`
+	echo $abs_rootdir$per$script
+ 
+ *** Aliasis ***
+	Used to cut down on lengthy and repititive commands
+	alias ls="ls -al"
+	alias pl="pwd; ls"
+	alias tell="whoami; hostname; pwd"
+	alias dir="ls -l | grep ^d"
+	alias lmar="ls -l | grep Mar"
+	alias wpa="chmod a+w"
+	alias d="df -h | awk '{print \$6}' | cut -c1-4"
+	unalias ls
+	
+*** Creatinf User or Global Aliasis ***
+	- User: applies only to a specific user profile
+	  User= /home/user/.bashrc
+	- Global: applies to everyone who has account on the system
+	  Global= /etc/bashrc
+
+*** Shell History ***
+	$ history
+	$ history | more
+	$ !<number>		% Re-exectues the command according to the number
+	  
+	
+	
