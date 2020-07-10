@@ -20,7 +20,7 @@
   *** Shell Scripting ***
     - Shell Script: executable file containing multiple shell commands that are exectued sequentially
 	  * Shell: #!bin/bash
-	  * CommentS: # this is a comment
+	  * Comments: # this is a comment
 	  * Commands: echo, cp, grep, etc.
 	  * Statements. if, while, for etc.
 	  * Calling: ./script.bash OR absolute path
