@@ -33,7 +33,7 @@
 	set abs_rootdir = `cd $rootdir && pwd`
 	echo $abs_rootdir$per$script
  
- *** Aliasis ***
+ *** Aliases ***
 	Used to cut down on lengthy and repititive commands
 	alias ls="ls -al"
 	alias pl="pwd; ls"
